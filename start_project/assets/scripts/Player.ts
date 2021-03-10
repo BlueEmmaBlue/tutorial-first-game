@@ -24,6 +24,15 @@ export default class NewClass extends cc.Component {
     accel: number = 0
     // LIFE-CYCLE CALLBACKS:
 
+    @property
+    accLeft: boolean = false
+
+    @property
+    accRight: boolean = false
+
+    @property
+    xSpeed: number = 0
+
     runJumpAction() {
         //上升
         var jumpUp = cc.tween().by(this.jumpDuration, { y: this.jumpHeight }, { easing: 'sineOut' });
@@ -36,14 +45,64 @@ export default class NewClass extends cc.Component {
         return cc.tween().repeatForever(tween);
     };
 
-    onLoad () {
-        var jumpAction=this.runJumpAction();
+    onKeyDown(e) {
+        switch (e.keyCode) {
+            case cc.macro.KEY.a:
+                this.accLeft = true;
+                break;
+            case cc.macro.KEY.d:
+                this.accRight = true;
+                break;
+        }
+    };
+
+    onKeyUp(e) {
+        // unset a flag when key released
+        switch (e.keyCode) {
+            case cc.macro.KEY.a:
+                this.accLeft = false;
+                break;
+            case cc.macro.KEY.d:
+                this.accRight = false;
+                break;
+        }
+    };
+
+    onLoad() {
+        var jumpAction = this.runJumpAction();
         cc.tween(this.node).then(jumpAction).start()
+
+        this.accLeft = false;
+        this.accRight = false;
+        // 主角当前水平方向速度
+        this.xSpeed = 0;
+
+        cc.systemEvent.on(cc.SystemEvent.EventType.KEY_DOWN, this.onKeyDown, this);
+        cc.systemEvent.on(cc.SystemEvent.EventType.KEY_UP, this.onKeyUp, this);
+    };
+
+    onDestroy() {
+        // 取消键盘输入监听
+        cc.systemEvent.off(cc.SystemEvent.EventType.KEY_DOWN, this.onKeyDown, this);
+        cc.systemEvent.off(cc.SystemEvent.EventType.KEY_UP, this.onKeyUp, this);
     };
 
     start() {
 
     }
 
-    // update (dt) {}
+    update(dt) {
+        if (this.accLeft) {
+            this.xSpeed -= this.accel * dt;
+        }
+        else if (this.accRight) {
+            this.xSpeed += this.accel * dt;
+        }
+
+        if (Math.abs(this.xSpeed) > this.maxMoveSpeed) {
+            this.xSpeed = this.maxMoveSpeed * this.xSpeed / Math.abs(this.xSpeed);
+        }
+
+        this.node.x += this.xSpeed * dt;
+    }
 }
