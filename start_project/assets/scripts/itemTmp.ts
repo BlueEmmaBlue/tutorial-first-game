@@ -30,7 +30,6 @@ export default class itemTmp extends cc.Component {
         this.itemPrice.string = data.itemPrice;
     }
 
-
     // onLoad () {}
 
     start() {

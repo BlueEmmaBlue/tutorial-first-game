@@ -8,29 +8,35 @@
 
 const { ccclass, property } = cc._decorator;
 
-interface tmpitem{
-    id: '',
-    itemName: '',
-    itemPrice: 0,
-    iconSF: cc.SpriteFrame
-};
+@ccclass
+export class xx1 {
+    @property()
+    id: number = 0;
+    @property()
+    itemName: string = '';
+    @property()
+    itemPrice: number = 0;
+    @property(cc.SpriteFrame)
+    iconSF: cc.SpriteFrame = null;
+}
 
 
 @ccclass
 export default class ItemList extends cc.Component {
 
-    @property()
-    items: tmpitem[] = null;
+    @property(xx1)
+    items: xx1[] = null;
 
     @property(cc.Prefab)
     itemPrefab: cc.Prefab = null;
 
 
-    onLoad () {
+    onLoad() {
         for (var i = 0; i < this.items.length; ++i) {
             var item = cc.instantiate(this.itemPrefab);
             var data = this.items[i];
             this.node.addChild(item);
+            console.log(data);
             item.getComponent('ItemTmp').init({
                 id: data.id,
                 itemName: data.itemName,
