@@ -70,13 +70,13 @@
     "_children": [
       {
         "__id__": 3
-      },
-      {
-        "__id__": 5
       }
     ],
     "_active": true,
     "_components": [
+      {
+        "__id__": 5
+      },
       {
         "__id__": 6
       },
@@ -88,9 +88,6 @@
       },
       {
         "__id__": 9
-      },
-      {
-        "__id__": 10
       }
     ],
     "_prefab": null,
@@ -123,9 +120,9 @@
         0,
         0,
         1,
-        1,
-        1,
-        1
+        1.936,
+        1.936,
+        1.936
       ]
     },
     "_eulerAngles": {
@@ -172,22 +169,22 @@
     "_anchorPoint": {
       "__type__": "cc.Vec2",
       "x": 0.5,
-      "y": 0.5024311798819865
+      "y": 0.5
     },
     "_trs": {
       "__type__": "TypedArray",
       "ctor": "Float64Array",
       "array": [
-        -35,
-        37.345,
+        -100,
+        0,
         0,
         0,
         0,
         0,
         1,
-        0.578,
-        0.578,
-        0.578
+        1.506,
+        1.541,
+        1.003
       ]
     },
     "_eulerAngles": {
@@ -240,64 +237,6 @@
     "_id": "81GN3uXINKVLeW4+iKSlim"
   },
   {
-    "__type__": "cc.Node",
-    "_name": "ItemList",
-    "_objFlags": 0,
-    "_parent": {
-      "__id__": 2
-    },
-    "_children": [],
-    "_active": true,
-    "_components": [],
-    "_prefab": null,
-    "_opacity": 255,
-    "_color": {
-      "__type__": "cc.Color",
-      "r": 255,
-      "g": 255,
-      "b": 255,
-      "a": 255
-    },
-    "_contentSize": {
-      "__type__": "cc.Size",
-      "width": 0,
-      "height": 0
-    },
-    "_anchorPoint": {
-      "__type__": "cc.Vec2",
-      "x": 0.5,
-      "y": 0.5
-    },
-    "_trs": {
-      "__type__": "TypedArray",
-      "ctor": "Float64Array",
-      "array": [
-        495,
-        0,
-        0,
-        0,
-        0,
-        0,
-        1,
-        1,
-        1,
-        1
-      ]
-    },
-    "_eulerAngles": {
-      "__type__": "cc.Vec3",
-      "x": 0,
-      "y": 0,
-      "z": 0
-    },
-    "_skewX": 0,
-    "_skewY": 0,
-    "_is3DNode": false,
-    "_groupIndex": 0,
-    "groupIndex": 0,
-    "_id": "323RDmqDhHx4PVdvJCma9R"
-  },
-  {
     "__type__": "cc.Canvas",
     "_name": "",
     "_objFlags": 0,
@@ -325,10 +264,10 @@
     "alignMode": 1,
     "_target": null,
     "_alignFlags": 45,
-    "_left": 0,
-    "_right": 0,
-    "_top": 0,
-    "_bottom": 0,
+    "_left": -449.28,
+    "_right": -449.28,
+    "_top": -299.52,
+    "_bottom": -299.52,
     "_verticalCenter": 0,
     "_horizontalCenter": 0,
     "_isAbsLeft": true,
@@ -357,7 +296,7 @@
     "_srcBlendFactor": 770,
     "_dstBlendFactor": 771,
     "_spriteFrame": {
-      "__uuid__": "bf9292f2-9e9a-4a98-8395-bf0d2075323a"
+      "__uuid__": "11b8244c-b6d9-4577-b37e-627b95227848"
     },
     "_type": 0,
     "_sizeMode": 0,
@@ -394,11 +333,11 @@
       "height": 40
     },
     "_N$startAxis": 0,
-    "_N$paddingLeft": 20,
-    "_N$paddingRight": 40,
+    "_N$paddingLeft": -200,
+    "_N$paddingRight": 0,
     "_N$paddingTop": 0,
     "_N$paddingBottom": 0,
-    "_N$spacingX": 50,
+    "_N$spacingX": 100,
     "_N$spacingY": 0,
     "_N$verticalDirection": 1,
     "_N$horizontalDirection": 0,
@@ -415,6 +354,9 @@
     "_enabled": true,
     "items": [
       {
+        "__id__": 10
+      },
+      {
         "__id__": 11
       },
       {
@@ -425,35 +367,44 @@
       }
     ],
     "itemPrefab": {
-      "__uuid__": "c95fc4a7-607b-4e62-bf5e-b416195ef60c"
+      "__uuid__": "9d4f2de0-c8d8-4141-9004-4d12ed1a36f8"
     },
     "_id": "b4s5mh9sJKDKG0pMhB9pEq"
   },
   {
     "__type__": "xx1",
-    "id": 0,
-    "itemName": "jack",
-    "itemPrice": 10,
     "iconSF": {
-      "__uuid__": "a7d32fc1-4a29-491e-a5e2-0892063d35d0"
+      "__uuid__": "e6d47bb9-4463-4c7d-89f7-3b013a0f6d6e"
+    },
+    "nameSF": {
+      "__uuid__": "dca5cc14-a869-44bf-842d-4f2c94b8039f"
     }
   },
   {
     "__type__": "xx1",
-    "id": 1,
-    "itemName": "emma",
-    "itemPrice": 20,
     "iconSF": {
-      "__uuid__": "a7d32fc1-4a29-491e-a5e2-0892063d35d0"
+      "__uuid__": "5ce8b3ea-1bfc-4a8d-b5c6-f2fbe55fc469"
+    },
+    "nameSF": {
+      "__uuid__": "e085a860-d170-4b42-bc9b-458794a4f98c"
     }
   },
   {
     "__type__": "xx1",
-    "id": 2,
-    "itemName": "ella",
-    "itemPrice": 30,
     "iconSF": {
-      "__uuid__": "a7d32fc1-4a29-491e-a5e2-0892063d35d0"
+      "__uuid__": "f1845ebb-3245-4067-9c1d-b89d8a2816b2"
+    },
+    "nameSF": {
+      "__uuid__": "3573a101-a63f-4c7c-853d-c707c0933ed7"
+    }
+  },
+  {
+    "__type__": "xx1",
+    "iconSF": {
+      "__uuid__": "9cd0e44f-5176-4700-ad7f-0139195d7283"
+    },
+    "nameSF": {
+      "__uuid__": "7c09e6a1-712c-44d9-8f1f-7bb248b3f75c"
     }
   }
 ]

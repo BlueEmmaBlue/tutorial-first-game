@@ -10,14 +10,10 @@ const { ccclass, property } = cc._decorator;
 
 @ccclass("xx1")
 export class xx1 {
-    @property("number")
-    id: number = 0;
-    @property("string")
-    itemName: string = '';
-    @property("number")
-    itemPrice: number = 0;
     @property(cc.SpriteFrame)
     iconSF: cc.SpriteFrame = undefined;
+    @property(cc.SpriteFrame)
+    nameSF: cc.SpriteFrame = undefined;
 }
 
 
@@ -35,16 +31,14 @@ export default class ItemList extends cc.Component {
         console.log('111',this.items.length);
         for (var i = 0; i < this.items.length; ++i) {
             var item = cc.instantiate(this.itemPrefab);
-            console.log('item',item);
             var data = this.items[i];
             this.node.addChild(item);
             console.log(data);
             item.getComponent('itemTmp').init({
-                id: data.id,
-                itemName: data.itemName,
-                itemPrice: data.itemPrice,
+                nameSF:data.nameSF,
                 iconSF: data.iconSF
             });
+            console.log('item',item);
         }
     }
 

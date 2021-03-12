@@ -9,23 +9,18 @@ const { ccclass, property } = cc._decorator;
 
 @ccclass
 export default class itemTmp extends cc.Component {
-    @property
-    id: number = 0;
+    @property("number")
+    id: number=0;
+    @property(cc.Sprite)
+    itemName: cc.Sprite = null;
     @property(cc.Sprite)
     icon: cc.Sprite = null;
-    @property(cc.Label)
-    itemName: cc.Label = null;
-    @property(cc.Label)
-    itemPrice: cc.Label = null;
 
     // LIFE-CYCLE CALLBACKS:
 
     init(data) {
-        console.log('data',data);
-        this.id = data.id;
         this.icon.spriteFrame = data.iconSF;
-        this.itemName.string = data.itemName;
-        this.itemPrice.string = data.itemPrice;
+        this.itemName.spriteFrame = data.nameSF;
     }
 
     // onLoad () {}
