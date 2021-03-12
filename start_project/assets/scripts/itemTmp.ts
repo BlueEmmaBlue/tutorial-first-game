@@ -9,9 +9,6 @@ const { ccclass, property } = cc._decorator;
 
 @ccclass
 export default class itemTmp extends cc.Component {
-
-
-
     @property
     id: number = 0;
     @property(cc.Sprite)
@@ -24,6 +21,7 @@ export default class itemTmp extends cc.Component {
     // LIFE-CYCLE CALLBACKS:
 
     init(data) {
+        console.log('data',data);
         this.id = data.id;
         this.icon.spriteFrame = data.iconSF;
         this.itemName.string = data.itemName;
@@ -32,9 +30,9 @@ export default class itemTmp extends cc.Component {
 
     // onLoad () {}
 
-    start() {
+    // start() {
 
-    }
+    // }
 
     // update (dt) {}
 }

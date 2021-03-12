@@ -8,16 +8,16 @@
 
 const { ccclass, property } = cc._decorator;
 
-@ccclass
+@ccclass("xx1")
 export class xx1 {
-    @property()
+    @property("number")
     id: number = 0;
-    @property()
+    @property("string")
     itemName: string = '';
-    @property()
+    @property("number")
     itemPrice: number = 0;
     @property(cc.SpriteFrame)
-    iconSF: cc.SpriteFrame = null;
+    iconSF: cc.SpriteFrame = undefined;
 }
 
 
@@ -25,19 +25,21 @@ export class xx1 {
 export default class ItemList extends cc.Component {
 
     @property(xx1)
-    items: xx1[] = null;
+    items: xx1[] = [];
 
     @property(cc.Prefab)
     itemPrefab: cc.Prefab = null;
 
 
     onLoad() {
+        console.log('111',this.items.length);
         for (var i = 0; i < this.items.length; ++i) {
             var item = cc.instantiate(this.itemPrefab);
+            console.log('item',item);
             var data = this.items[i];
             this.node.addChild(item);
             console.log(data);
-            item.getComponent('ItemTmp').init({
+            item.getComponent('itemTmp').init({
                 id: data.id,
                 itemName: data.itemName,
                 itemPrice: data.itemPrice,
